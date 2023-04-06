@@ -7,36 +7,22 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryEL = document.querySelector('.gallery');
-// creating img's
 for (const image of galleryItems) {
-  const imgEl = `<div class="gallery__item">
-  <a class="gallery__link" href=${image.original}>
-  <img 
-  class="gallery__image"
-  src=${image.preview}
-  data-source=${image.original}
-  alt=${image.description}/>
-  
-  </a>
-  </div>`;
+  const imgEl = `<a class="gallery__item" href=${image.original}>
+  <img class="gallery__image" src=${image.preview} alt=${image.description} />
+</a>`;
 
   galleryEL.insertAdjacentHTML('afterbegin', imgEl);
 }
+var lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+});
 
 const imgClickHandler = event => {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-  const instance = basicLightbox.create(
-    `<img src="${event.target.dataset.source}" >`
-  );
-  instance.show();
-  document.addEventListener('keydown', event => {
-    if (event.code === 'Escape' || event.keyCode === 27) {
-      instance.close();
-    }
-  });
 };
-
 galleryEL.addEventListener('click', imgClickHandler);

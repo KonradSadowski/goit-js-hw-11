@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 const formEl = document.querySelector('.feedback-form');
 const emailEl = document.querySelector(`input[name="email"]`);
 const messageEl = document.querySelector(`textarea[name="message"]`);
-const buttonEl = document.querySelector(`button`);
+
 
 // Pobieranie wartości inputów do local storage
 const dataDownload = () => {

@@ -8,15 +8,27 @@
     <link rel="stylesheet" href="css/common.css" />
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <header class="header-bar">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">
+          <svg class="icon-search">
+            <use xlink:href="./images/search.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </header>
+    <main>
+      <div class="gallery">
+        <!-- Obraz karty -->
+        <button class="load-button hidden">LOAD MORE</button>
+      </div>
+    </main>
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>

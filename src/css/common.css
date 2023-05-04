@@ -34,6 +34,7 @@ img {
     rgba(9, 106, 121, 1) 52%,
     rgba(0, 212, 255, 1) 87%
   );
+  margin-bottom: 10px;
 }
 
 .search-form input {
@@ -52,21 +53,58 @@ img {
   stroke-width: 0;
   stroke: black;
   fill: black;
+  cursor: pointer;
 }
 
 .gallery {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.photo-card {
+  box-shadow: 6px 7px 12px 4px rgba(66, 68, 90, 1);
+  width: 350px;
+}
+
+.photo-link img {
+  height: 200px;
+  width: 350px;
+  object-fit: cover;
+}
+
+.photo-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 5px;
+}
+
+.photo-info div {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.photo-info p {
+  font-style: italic;
 }
 .load-button {
-  background: rgb(34, 193, 195);
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+  background: rgba(14, 73, 149, 0.588);
   border: 1px solid black;
   padding: 10;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 20 auto;
+  visibility: hidden;
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
 }

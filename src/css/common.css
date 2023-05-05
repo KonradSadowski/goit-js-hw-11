@@ -92,7 +92,12 @@ img {
   font-style: italic;
 }
 .load-button {
-  background: rgba(14, 73, 149, 0.588);
+  background: linear-gradient(
+    90deg,
+    rgb(123, 123, 123) 0%,
+    rgba(9, 106, 121, 1) 52%,
+    rgba(0, 212, 255, 1) 87%
+  );
   border: 1px solid black;
   padding: 10;
   font-weight: bold;

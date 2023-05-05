@@ -1,6 +1,9 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
+// Opisany w dokumentacji
 import SimpleLightbox from 'simplelightbox';
+// Dodatkowy import stylów
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const formEl = document.querySelector('.search-form');
 const inputEl = document.querySelector('input');
@@ -63,11 +66,11 @@ const loadPhotos = () => {
   getPhotos()
     .then(pictures => {
       const totalHits = pictures.data.total;
-
-      if (pictures.data.hits.length === 0) throw new Error();
       galleryEl.innerHTML = drawPhotos(pictures);
       loadButtonEl.style.visibility = 'visible';
       Notiflix.Notify.info(`Hooray! We found ${totalHits} images.`);
+      var lightbox = new SimpleLightbox('.gallery a');
+      if (pictures.data.hits.length === 0) throw new Error();
     })
     .catch(error => {
       Notiflix.Notify.failure(
@@ -90,6 +93,7 @@ const loadMorePhotos = () => {
     const { height: cardHeight } = document
       .querySelector('.gallery')
       .firstElementChild.getBoundingClientRect();
+    var lightbox = new SimpleLightbox('.gallery a');
 
     window.scrollBy({
       top: cardHeight * 2,
